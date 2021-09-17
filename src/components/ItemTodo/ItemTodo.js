@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconCheck } from './IconCheck';
-import { IconCross } from './IconCross';
+import IconCheck from './icon-check.svg';
+import IconCross from './icon-cross.svg';
 import './ItemTodo.css';
 import '../CreateTodo/CreateTodo.css';
 
@@ -12,10 +12,15 @@ function ItemTodo({ todo }) {
 	return (
 		<li className="itemTodo">
 			<div className="circulo border border-gradient">
-				<IconCheck className="checkIcon" alt="Check icon" />
+				<img className="checkIcon" src={IconCheck} alt="Check icon" />
 			</div>
 			<p className="todoText">{todo.text}</p>
-			<IconCross onClick={probar} className="crossIcon crossIconShow" />
+			<img
+				onClick={probar}
+				className="crossIcon"
+				src={IconCross}
+				alt="Cross Icon"
+			/>
 		</li>
 	);
 }
