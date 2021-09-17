@@ -11,7 +11,7 @@ function ItemTodo({ todo }) {
 
 	return (
 		<li className="itemTodo">
-			<div className="circulo border border-gradient">
+			<div className="circulo">
 				<img className="checkIcon" src={IconCheck} alt="Check icon" />
 			</div>
 			<p className="todoText">{todo.text}</p>

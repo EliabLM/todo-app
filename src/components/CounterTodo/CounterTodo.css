@@ -1,0 +1,27 @@
+@import url('../../App.css');
+
+.CounterTodo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 25px;
+	background: var(--Very-Dark-Desaturated-Blue);
+}
+
+.items-left {
+	font-size: 15px;
+	color: var(--Dark-Grayish-Blue);
+}
+
+.clear-btn {
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 15px;
+	border: none;
+	background: transparent;
+	color: var(--Dark-Grayish-Blue);
+}
+
+.clear-btn:hover {
+	color: var(--Light-Grayish-Blue);
+}

@@ -1,12 +1,10 @@
 @import url('../../App.css');
 
 .itemTodo {
-	/* outline: 1px solid white; */
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	padding: 20px 25px;
-	/* border-radius: 5px; */
 	border-bottom: 1px solid var(--Very-Dark-Grayish-Blue);
 	background: var(--Very-Dark-Desaturated-Blue);
 	list-style: none;
@@ -23,22 +21,28 @@
 	background: var(--Check-Background);
 }
 
+.checkIcon {
+	display: none;
+}
+
 .crossIcon {
 	cursor: pointer;
 	display: none;
 	margin-left: auto;
 }
 
+.itemTodo:hover > .circulo > .checkIcon {
+	display: block;
+}
+
 .itemTodo:hover > .crossIcon {
 	display: block;
 }
 
-/* .border {
-	border: 1px solid;
-	border-image-slice: 1;
-	border-width: 1px;
-} */
+.itemTodo:hover > .circulo {
+	background: var(--Check-Background);
+}
 
-/* .border-gradient {
-	border-image-source: var(--Check-Background);
-} */
+.crossIcon:hover {
+	filter: brightness(2);
+}

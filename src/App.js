@@ -3,6 +3,7 @@ import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { CreateTodo } from './components/CreateTodo/CreateTodo';
 import { ListTodo } from './components/ListTodo/ListTodo';
+import { FilterTodo } from './components/FilterTodo/FilterTodo';
 import bgDesktopDark from './images/bg-desktop-dark.jpg';
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
 			<main className="main">
 				<CreateTodo />
 				<ListTodo todos={todos} />
+				<FilterTodo />
 			</main>
 			<p className="drag-and-drop">Drag and drop to reorder list</p>
 			<Footer />
