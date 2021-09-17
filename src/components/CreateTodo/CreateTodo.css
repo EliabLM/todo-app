@@ -9,6 +9,10 @@
 }
 
 .circulo {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 25px;
 	height: 25px;
 	margin-right: 25px;
