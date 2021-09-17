@@ -1,0 +1,20 @@
+@import url('../../App.css');
+
+.header {
+	/* outline: 1px solid white; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 540px;
+	margin: 75px 0px 50px 0px;
+}
+
+h1 {
+	font-weight: 700;
+	color: var(--Light-Grayish-Blue);
+	letter-spacing: 15px;
+}
+
+.iconMoon {
+	display: none;
+}

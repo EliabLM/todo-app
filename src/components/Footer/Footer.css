@@ -1,0 +1,9 @@
+.attribution {
+	margin-top: 60px;
+	font-size: 11px;
+	text-align: center;
+	color: hsl(234, 39%, 85%);
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
