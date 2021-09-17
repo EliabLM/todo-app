@@ -4,6 +4,11 @@
 	--Check-Background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
 	/* Light Theme */
+	--Very-Light-Gray: hsl(0, 0%, 98%);
+	--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+	--Light-Grayish-Blue: hsl(233, 11%, 84%);
+	--Dark-Grayish-Blue: hsl(236, 9%, 61%);
+	--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 
 	/* Dark theme */
 	--Very-Dark-Blue: hsl(235, 21%, 11%);
@@ -48,7 +53,9 @@ body {
 }
 
 .main {
-	outline: 1px solid white;
+	/* outline: 1px solid white; */
+	display: flex;
+	flex-direction: column;
 	min-width: 540px;
 	margin-bottom: 50px;
 }
