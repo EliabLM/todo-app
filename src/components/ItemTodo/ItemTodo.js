@@ -4,11 +4,7 @@ import IconCross from './icon-cross.svg';
 import './ItemTodo.css';
 import '../CreateTodo/CreateTodo.css';
 
-function ItemTodo({ todo }) {
-	const probar = () => {
-		console.log('probando');
-	};
-
+function ItemTodo({ todo, eliminarTodo }) {
 	return (
 		<li className="itemTodo">
 			<div className="circulo">
@@ -16,7 +12,7 @@ function ItemTodo({ todo }) {
 			</div>
 			<p className="todoText">{todo.text}</p>
 			<img
-				onClick={probar}
+				onClick={() => eliminarTodo(todo.text)}
 				className="crossIcon"
 				src={IconCross}
 				alt="Cross Icon"

@@ -1,10 +1,10 @@
 import React from 'react';
 import './CounterTodo.css';
 
-function CounterTodo() {
+function CounterTodo({ completedTodos, totalTodos }) {
 	return (
 		<div className="CounterTodo">
-			<p className="items-left">5 items left</p>
+			<p className="items-left">{totalTodos - completedTodos} items left</p>
 			<button className="clear-btn">Clear Completed</button>
 		</div>
 	);

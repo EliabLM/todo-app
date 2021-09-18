@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { CreateTodo } from './components/CreateTodo/CreateTodo';
@@ -8,23 +8,58 @@ import bgDesktopDark from './images/bg-desktop-dark.jpg';
 import './App.css';
 
 // lista momentanea de todos
-const todos = [
-	{ text: 'Complete online JavaScript course', completed: true },
-	{ text: 'Jog around the park 3x', completed: false },
-	{ text: '10 minutres meditation', completed: false },
-	{ text: 'Read for 1 hour', completed: false },
-	{ text: 'Pick up groceries', completed: false },
-	{ text: 'Complete Todo App on Frontend Mentor', completed: false },
-];
+// const todos = [
+// 	{ text: 'Complete online JavaScript course', completed: true },
+// 	{ text: 'Jog around the park 3x', completed: true },
+// 	{ text: '10 minutes meditation', completed: true },
+// 	{ text: 'Read for 1 hour', completed: false },
+// 	{ text: 'Pick up groceries', completed: false },
+// 	{ text: 'Complete Todo App on Frontend Mentor', completed: false },
+// ];
+
+// localStorage.setItem('todos', JSON.stringify(todos));
 
 function App() {
+	// Sacar los todos que esten en local storage
+	let todosIniciales = JSON.parse(localStorage.getItem('todos'));
+	if (!todosIniciales) {
+		todosIniciales = [];
+	}
+
+	// Arreglo de todos con useState
+	const [todos, guardarTodo] = useState(todosIniciales);
+
+	// todos completados
+	const completedTodos = todos.filter((todo) => todo.completed).length;
+	const totalTodos = todos.length;
+
+	// Funcion que elimina un todo por su texto
+	const eliminarTodo = (text) => {
+		const nuevosTodos = todos.filter((todo) => todo.text !== text);
+		guardarTodo(nuevosTodos);
+	};
+
+	// useEffect que modifica los todos que estan en local storage cada vez que se elimina o agrega uno nuevo
+	useEffect(() => {
+		if (todosIniciales) {
+			localStorage.setItem('todos', JSON.stringify(todos));
+		} else {
+			localStorage.setItem('todos', JSON.stringify([]));
+		}
+	}, [todos, todosIniciales]);
+
 	return (
 		<Fragment>
 			<img className="img-background" src={bgDesktopDark} alt="Background" />
 			<Header />
 			<main className="main">
 				<CreateTodo />
-				<ListTodo todos={todos} />
+				<ListTodo
+					completedTodos={completedTodos}
+					totalTodos={totalTodos}
+					todos={todos}
+					eliminarTodo={eliminarTodo}
+				/>
 				<FilterTodo />
 			</main>
 			<p className="drag-and-drop">Drag and drop to reorder list</p>
