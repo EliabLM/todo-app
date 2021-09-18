@@ -3,12 +3,23 @@ import { ItemTodo } from '../ItemTodo/ItemTodo';
 import { CounterTodo } from '../CounterTodo/CounterTodo';
 import './ListTodo.css';
 
-function ListTodo({ todos, totalTodos, completedTodos, eliminarTodo }) {
+function ListTodo({
+	todos,
+	totalTodos,
+	completedTodos,
+	eliminarTodo,
+	marcarTodo,
+}) {
 	return (
 		<section className="list">
 			<ul>
 				{todos.map((todo) => (
-					<ItemTodo eliminarTodo={eliminarTodo} todo={todo} key={todo.text} />
+					<ItemTodo
+						marcarTodo={marcarTodo}
+						eliminarTodo={eliminarTodo}
+						todo={todo}
+						key={todo.text}
+					/>
 				))}
 			</ul>
 			<CounterTodo totalTodos={totalTodos} completedTodos={completedTodos} />

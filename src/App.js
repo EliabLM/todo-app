@@ -39,6 +39,19 @@ function App() {
 		guardarTodo(nuevosTodos);
 	};
 
+	// Funcion que marca los todo como completados
+	const marcarTodo = (text) => {
+		let nuevosTodos = todos.filter((todo) => todo.text === text);
+		if (nuevosTodos[0].completed) {
+			nuevosTodos[0].completed = false;
+		} else {
+			nuevosTodos[0].completed = true;
+		}
+
+		nuevosTodos = [...todos];
+		guardarTodo(nuevosTodos);
+	};
+
 	// useEffect que modifica los todos que estan en local storage cada vez que se elimina o agrega uno nuevo
 	useEffect(() => {
 		if (todosIniciales) {
@@ -58,6 +71,7 @@ function App() {
 					completedTodos={completedTodos}
 					totalTodos={totalTodos}
 					todos={todos}
+					marcarTodo={marcarTodo}
 					eliminarTodo={eliminarTodo}
 				/>
 				<FilterTodo />

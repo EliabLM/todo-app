@@ -17,25 +17,37 @@
 	color: var(--Light-Grayish-Blue);
 }
 
+.todoText-check {
+	text-decoration: line-through;
+}
+
 .circulo:hover {
 	background: var(--Check-Background);
 }
 
-.checkIcon {
+.checkIcon-hidden {
 	display: none;
 }
 
-.crossIcon {
+.checkIcon {
+	display: block;
+}
+
+.checkIcon-active {
+	background: var(--Check-Background);
+}
+
+.crossIcon-hidden {
 	cursor: pointer;
 	display: none;
 	margin-left: auto;
 }
 
-.itemTodo:hover > .circulo > .checkIcon {
+.crossIcon-active {
 	display: block;
 }
 
-.itemTodo:hover > .crossIcon {
+.itemTodo:hover > .crossIcon-hidden {
 	display: block;
 }
 
@@ -43,6 +55,6 @@
 	background: var(--Check-Background);
 }
 
-.crossIcon:hover {
+.crossIcon-hidden:hover {
 	filter: brightness(2);
 }
