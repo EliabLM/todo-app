@@ -7,18 +7,6 @@ import { FilterTodo } from './components/FilterTodo/FilterTodo';
 import bgDesktopDark from './images/bg-desktop-dark.jpg';
 import './App.css';
 
-// lista momentanea de todos
-// const todos = [
-// 	{ text: 'Complete online JavaScript course', completed: true },
-// 	{ text: 'Jog around the park 3x', completed: true },
-// 	{ text: '10 minutes meditation', completed: true },
-// 	{ text: 'Read for 1 hour', completed: false },
-// 	{ text: 'Pick up groceries', completed: false },
-// 	{ text: 'Complete Todo App on Frontend Mentor', completed: false },
-// ];
-
-// localStorage.setItem('todos', JSON.stringify(todos));
-
 function App() {
 	// Sacar los todos que esten en local storage
 	let todosIniciales = JSON.parse(localStorage.getItem('todos'));
@@ -32,6 +20,14 @@ function App() {
 	// todos completados
 	const completedTodos = todos.filter((todo) => todo.completed).length;
 	const totalTodos = todos.length;
+
+	// Funcion que agrega los todo a la lista
+
+	const agregarTodo = (text) => {
+		const nuevosTodos = [...todos];
+		nuevosTodos.push({ text, completed: false });
+		guardarTodo(nuevosTodos);
+	};
 
 	// Funcion que elimina un todo por su texto
 	const eliminarTodo = (text) => {
@@ -66,7 +62,7 @@ function App() {
 			<img className="img-background" src={bgDesktopDark} alt="Background" />
 			<Header />
 			<main className="main">
-				<CreateTodo />
+				<CreateTodo agregarTodo={agregarTodo} />
 				<ListTodo
 					completedTodos={completedTodos}
 					totalTodos={totalTodos}
