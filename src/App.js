@@ -22,7 +22,6 @@ function App() {
 	const totalTodos = todos.length;
 
 	// Funcion que agrega los todo a la lista
-
 	const agregarTodo = (text) => {
 		const nuevosTodos = [...todos];
 		nuevosTodos.push({ text, completed: false });
@@ -32,6 +31,12 @@ function App() {
 	// Funcion que elimina un todo por su texto
 	const eliminarTodo = (text) => {
 		const nuevosTodos = todos.filter((todo) => todo.text !== text);
+		guardarTodo(nuevosTodos);
+	};
+
+	// Funcion que elimina los todos marcados como completados
+	const eliminarTodoCompletados = () => {
+		const nuevosTodos = todos.filter((todo) => todo.completed !== true);
 		guardarTodo(nuevosTodos);
 	};
 
@@ -57,6 +62,7 @@ function App() {
 		}
 	}, [todos, todosIniciales]);
 
+	// App UI
 	return (
 		<Fragment>
 			<img className="img-background" src={bgDesktopDark} alt="Background" />
@@ -69,6 +75,7 @@ function App() {
 					todos={todos}
 					marcarTodo={marcarTodo}
 					eliminarTodo={eliminarTodo}
+					eliminarTodoCompletados={eliminarTodoCompletados}
 				/>
 				<FilterTodo />
 			</main>

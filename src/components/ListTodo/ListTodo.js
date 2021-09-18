@@ -9,6 +9,7 @@ function ListTodo({
 	completedTodos,
 	eliminarTodo,
 	marcarTodo,
+	eliminarTodoCompletados,
 }) {
 	return (
 		<section className="list">
@@ -22,7 +23,12 @@ function ListTodo({
 					/>
 				))}
 			</ul>
-			<CounterTodo totalTodos={totalTodos} completedTodos={completedTodos} />
+			<CounterTodo
+				eliminarTodoCompletados={eliminarTodoCompletados}
+				eliminarTodo={eliminarTodo}
+				totalTodos={totalTodos}
+				completedTodos={completedTodos}
+			/>
 		</section>
 	);
 }
