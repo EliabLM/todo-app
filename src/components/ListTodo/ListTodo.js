@@ -4,7 +4,7 @@ import { CounterTodo } from '../CounterTodo/CounterTodo';
 import './ListTodo.css';
 
 function ListTodo({
-	todos,
+	mostrarTodos,
 	totalTodos,
 	completedTodos,
 	eliminarTodo,
@@ -14,7 +14,7 @@ function ListTodo({
 	return (
 		<section className="list">
 			<ul>
-				{todos.map((todo) => (
+				{mostrarTodos.map((todo) => (
 					<ItemTodo
 						marcarTodo={marcarTodo}
 						eliminarTodo={eliminarTodo}

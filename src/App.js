@@ -16,6 +16,7 @@ function App() {
 
 	// Arreglo de todos con useState
 	const [todos, guardarTodo] = useState(todosIniciales);
+	const [filtrarTodo, setFiltrarTodos] = useState('all');
 
 	// todos completados
 	const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -53,6 +54,16 @@ function App() {
 		guardarTodo(nuevosTodos);
 	};
 
+	// filtrar todos con los botones all, active y completed
+	let mostrarTodos = [];
+	if (filtrarTodo === 'all') {
+		mostrarTodos = todos;
+	} else if (filtrarTodo === 'active') {
+		mostrarTodos = todos.filter((todo) => todo.completed !== true);
+	} else if (filtrarTodo === 'completed') {
+		mostrarTodos = todos.filter((todo) => todo.completed !== false);
+	}
+
 	// useEffect que modifica los todos que estan en local storage cada vez que se elimina o agrega uno nuevo
 	useEffect(() => {
 		if (todosIniciales) {
@@ -72,12 +83,12 @@ function App() {
 				<ListTodo
 					completedTodos={completedTodos}
 					totalTodos={totalTodos}
-					todos={todos}
+					mostrarTodos={mostrarTodos}
 					marcarTodo={marcarTodo}
 					eliminarTodo={eliminarTodo}
 					eliminarTodoCompletados={eliminarTodoCompletados}
 				/>
-				<FilterTodo />
+				<FilterTodo setFiltrarTodos={setFiltrarTodos} />
 			</main>
 			<p className="drag-and-drop">Drag and drop to reorder list</p>
 			<Footer />

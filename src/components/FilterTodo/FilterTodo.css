@@ -20,12 +20,12 @@
 	color: var(--Dark-Grayish-Blue);
 }
 
-.filter-btn:hover {
-	color: var(--Light-Grayish-Blue);
+.filter-btn-active {
+	color: var(--Bright-Blue);
 }
 
-.filter-btn:active {
-	color: var(--Bright-Blue);
+.filter-btn:hover {
+	color: var(--Light-Grayish-Blue);
 }
 
 .active-btn {
