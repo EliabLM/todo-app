@@ -25,3 +25,18 @@
 .clear-btn:hover {
 	color: var(--Light-Grayish-Blue);
 }
+
+/* Media queries */
+@media screen and (max-width: 1000px) {
+	.CounterTodo {
+		padding: 15px 20px;
+	}
+
+	.items-left {
+		font-size: 13px;
+	}
+
+	.clear-btn {
+		font-size: 13px;
+	}
+}

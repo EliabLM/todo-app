@@ -58,3 +58,18 @@
 .crossIcon-hidden:hover {
 	filter: brightness(2);
 }
+
+/* Media queries */
+@media screen and (max-width: 1000px) {
+	.itemTodo {
+		padding: 15px 20px;
+	}
+
+	.todoText {
+		font-size: 13px;
+	}
+
+	.crossIcon-hidden {
+		width: 13px;
+	}
+}

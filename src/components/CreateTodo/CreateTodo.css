@@ -33,3 +33,21 @@
 .input::placeholder {
 	color: var(--Dark-Grayish-Blue);
 }
+
+/* Media quieries */
+@media screen and (max-width: 1000px) {
+	.createTodo {
+		padding: 15px 20px;
+		margin-bottom: 15px;
+	}
+
+	.circulo {
+		width: 22px;
+		height: 22px;
+		margin-right: 12px;
+	}
+
+	.input {
+		font-size: 13px;
+	}
+}

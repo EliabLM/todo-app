@@ -1,7 +1,6 @@
 @import url('../../App.css');
 
 .FilterTodo {
-	/* outline: 1px solid white; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -30,4 +29,19 @@
 
 .active-btn {
 	margin: 0 15px;
+}
+
+/* Media queries */
+@media screen and (max-width: 1000px) {
+	.FilterTodo {
+		width: 100%;
+		margin-top: 15px;
+		padding: 15px 20px;
+		border-radius: 5px;
+		background: var(--Very-Dark-Desaturated-Blue);
+	}
+
+	.filter-btn {
+		font-size: 13px;
+	}
 }

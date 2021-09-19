@@ -5,6 +5,7 @@ import { CreateTodo } from './components/CreateTodo/CreateTodo';
 import { ListTodo } from './components/ListTodo/ListTodo';
 import { FilterTodo } from './components/FilterTodo/FilterTodo';
 import bgDesktopDark from './images/bg-desktop-dark.jpg';
+import bgMobileDark from './images/bg-mobile-dark.jpg';
 import './App.css';
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
 		guardarTodo(nuevosTodos);
 	};
 
-	// filtrar todos con los botones all, active y completed
+	// filtrar to-dos con los botones all, active y completed
 	let mostrarTodos = [];
 	if (filtrarTodo === 'all') {
 		mostrarTodos = todos;
@@ -76,7 +77,16 @@ function App() {
 	// App UI
 	return (
 		<Fragment>
-			<img className="img-background" src={bgDesktopDark} alt="Background" />
+			<img
+				className="img-background-dark-desktop img-background"
+				src={bgDesktopDark}
+				alt="Background dark desktop"
+			/>
+			<img
+				className="img-background-dark-mobile img-background"
+				src={bgMobileDark}
+				alt="Background dark mobile"
+			/>
 			<Header />
 			<main className="main">
 				<CreateTodo agregarTodo={agregarTodo} />

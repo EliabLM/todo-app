@@ -1,20 +1,29 @@
 @import url('../../App.css');
 
 .header {
-	/* outline: 1px solid white; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	min-width: 540px;
-	margin: 75px 0px 50px 0px;
+	margin: 75px 31.25% 50px 31.25%;
 }
 
 h1 {
+	font-size: 25px;
 	font-weight: 700;
+	text-transform: uppercase;
 	color: var(--Light-Grayish-Blue);
 	letter-spacing: 15px;
 }
 
 .iconMoon {
 	display: none;
+}
+
+/* Media queries */
+@media screen and (max-width: 1000px) {
+	.header {
+		margin: 45px 5% 30px 5%;
+		min-width: 0px;
+	}
 }
