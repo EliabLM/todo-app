@@ -9,7 +9,6 @@
 }
 
 h1 {
-	font-size: 25px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--Light-Grayish-Blue);
@@ -25,5 +24,9 @@ h1 {
 	.header {
 		margin: 45px 5% 30px 5%;
 		min-width: 0px;
+	}
+
+	h1 {
+		font-size: 25px;
 	}
 }
